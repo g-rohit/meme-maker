@@ -1,0 +1,146 @@
+<!-- Designed & Developed by 
+
+ ██████╗     ██████╗  ██████╗ ██╗  ██╗██╗████████╗
+██╔════╝     ██╔══██╗██╔═══██╗██║  ██║██║╚══██╔══╝
+██║  ███╗    ██████╔╝██║   ██║███████║██║   ██║   
+██║   ██║    ██╔══██╗██║   ██║██╔══██║██║   ██║   
+╚██████╔╝    ██║  ██║╚██████╔╝██║  ██║██║   ██║   
+ ╚═════╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝   ╚═╝   
+
+https://about.me/grohit
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- html 2 canvas -->
+<script src="html2canvas.js"></script> 
+
+<!-- Bulma -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+        integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4=" crossorigin="anonymous" />
+<!-- FA -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- custom css -->
+<link rel="stylesheet" href="mememakermain.css">
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ 
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Anton|Oswald" rel="stylesheet">
+<script type="text/javascript" src="mm-main.js"></script>
+
+<title>Meme maker</title>
+</head>
+
+<body>
+<div class="container-fluid"> 
+  <!-- Hero section,  -->
+  <header>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title has-text-warning"> Meme maker </h1>
+          <p class="subtitle has-text-light"> The coolest Meme Maker on the internet. <br>
+            <br>
+            <a class="button  is-white"> Click here for instructions</a> </p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section class="hero is-light">
+    <div class="hero-body columns"> 
+      <!-- Left column -->
+      <div class="column" id="html-content-holder" style="padding: 0;"> 
+        <!-- Caption and Image section Starts-->
+        <div class="container has-text-centered" id="MemeLayout"> 
+          <!-- 
+                        <canvas id="imageGoesHere"> --> 
+          <!-- Your browser does not support the HTML5 canvas tag. -->
+          <p id="memeCaption">Caption Goes here</p>
+          <img id="imageGoesHere" src="" alt="image-preview-here" /> 
+          <!-- </canvas> --> 
+        </div>
+      </div>
+      <!-- Caption and Image section Ends--> 
+      
+      <!-- CTAs starts -->
+      <div class="column">
+        <div class="has-text-centered actionButtons">
+          <div class="field is-grouped ">
+            <p class="control uploader"> <a class="button is-dark is-fullwidth is-medium"> <span class="icon is-small"> <i class="fas fa-upload"></i> </span> <span>Browse image</span>
+              <input type="file" accept="image/*" onchange="showMyImage(this)" value=""
+                                        class="button button is-dark chooseFile" />
+              </a> </p>
+            <p class="control"> <a class="button is-dark is-medium is-fullwidth"> <span class="icon is-small"> <i class="fas fa-camera"></i> </span> <span>Take selfie</span> </a> </p>
+            <p class="control"> <a class="button button is-dark is-medium is-fullwidth"> <span class="icon is-small"> <i class="fas fa-comment-dots"></i> </span> <span>Auto Generate</span> </a> </p>
+          </div>
+          
+          <!-- Image preview --> 
+          
+          <!-- <div class="field">
+                            <img id="thumbnail"  src="" alt="image-preview-here"/>
+                        </div> -->
+          
+          <div class="field is-grouped ">
+            <p class="control"> <a class="button button is-dark is-medium is-fullwidth" id="CaptionInput"> <span class="icon is-small"> <i class="fas fa-pencil-alt"></i> </span> <span>Add caption&#160;</span>
+              <input type="text" id="theText" size="40" maxlength="400" placeholder="Write your caption here"/>
+              <button id="submitCaption" class="button is-dark" onclick="submitCaption()">Submit caption</button>
+              </a> </p>
+          </div>
+          <div class="field is-grouped ">
+            <p class="control">
+              <a class="button is-dark is-medium is-fullwidth" id="btn-Preview-Image">   <span class="icon is-small">
+              <i class="fas fa-eye"></i></span><span>Preview Meme</span></a>  </p>
+            <p class="control">
+                <a class="button button is-dark is-medium is-fullwidth" id="btn-Convert-Html2Image" href="#"> <span class="icon is-small"> <i class="fas fa-download"></i> </span> <span>Download Meme</span> </a>
+            </p>
+            <p class="control">
+                <a class="button is-dark is-medium is-fullwidth" href="javascript:location.reload()"> <span class="icon is-small"> <i class="fas fa-redo-alt"></i> </span> <span>Reload page</span>
+                </a>
+            </p>
+        
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p style="padding:15px;">Preview will appear here:</p>
+        <div id="previewImage">
+        </div>
+  <!-- CTAs Ends--> 
+</div>
+
+</body>
+<script>
+  $(document).ready(function () {
+
+
+      var element = $("#html-content-holder"); // global variable
+      var getCanvas; // global variable
+
+      $("#btn-Preview-Image").on('click', function () {
+          html2canvas(element, {
+              onrendered: function (canvas) {
+                  $("#previewImage").append(canvas);
+                  getCanvas = canvas;
+              }
+          });
+      });
+
+      $("#btn-Convert-Html2Image").on('click', function () {
+          var imgageData = getCanvas.toDataURL("image/png");
+          // Now browser starts downloading it instead of just showing it
+          var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+          $("#btn-Convert-Html2Image").attr("download", "yourMeme.png").attr("href", newData);
+      });
+
+  });
+
+</script>
+</html>

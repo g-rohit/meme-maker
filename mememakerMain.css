@@ -1,0 +1,145 @@
+/* font-family: 'Oswald', sans-serif;
+font-family: 'Anton', sans-serif; */
+
+@font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Helvetica'), url('Helvetica.woff') format('woff');
+    }
+
+    
+.hero-body {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 2rem 1.5rem !important;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.subtitle {
+    /* font-weight: 100; */
+    font-size: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Anton', sans-serif;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+#memeGoesHere {
+    border: 5px solid #4a4a4a;
+    width: 500px;
+    height: 500px;
+}
+
+.actionButtons{
+    display: grid;
+justify-items: center;
+}
+
+.button.is-dark:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+    transition: .6s;
+}
+ 
+
+#thumbnail {
+    width:10%; margin-top:10px;
+    cursor: pointer;
+    height: 10%;
+}
+
+input{
+    font-family: 'Oswald', sans-serif;   
+}
+.uploader {
+    cursor: pointer !important;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.uploader::before {
+    cursor: pointer;
+}
+.chooseFile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    padding-left: 200px;
+    margin-right: -200px;
+
+}
+
+
+#MemeLayout {
+    background: #ffffff;
+    /* border: 3px solid #4a4a4a; */
+    padding: 10px 10px 5px 10px;
+    height: auto !important;
+    width: 100% !important;
+    -moz-box-shadow:    0px 0px 5px 6px #ccc;
+    -webkit-box-shadow: 0px 0px 5px 6px #ccc;
+    box-shadow:         0px 0px 5px 6px #ccc;
+}
+    
+#memeCaption {
+    font-family: 'Helvetica';
+    font-size: 1.5em;
+    color: #000000;
+    text-align: left;
+}
+
+@media all and (max-width:480px) {
+ 
+    #memeCaption {
+        font-family: 'Helvetica';
+        font-size: 1em;
+        color: #000000;
+        text-align: left;
+    }
+
+    .actionButtons{
+        display: inline-block !important;
+    }
+
+    .field.is-grouped {
+    display: block !important; 
+}
+
+    .control {
+        display: block !important;
+        width: 100vw !important;
+        margin-bottom: 10px !important;
+    }
+
+#submitCaption {
+    display: block;
+    position: absolute;
+     width: 100%;
+    top: 50px;
+    color: #000000;
+    background: #cccccc !important
+}
+
+#CaptionInput {
+    margin-bottom: 50px !important;
+}
+}
